@@ -1,0 +1,23 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    background: #222;
+}
+
+.calendar-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.calendar__column {
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    min-width: 300px;
+}
