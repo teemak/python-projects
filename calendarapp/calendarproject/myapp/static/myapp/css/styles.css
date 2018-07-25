@@ -16,8 +16,22 @@ body {
 }
 
 .calendar__column {
+	display: block;
+	padding: 10px;
     border: 1px solid white;
     border-radius: 10px;
     padding: 10px;
-    min-width: 300px;
+	width: 500px;
+	margin: 10px;
+}
+
+.details {
+    text-align: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;	
 }
