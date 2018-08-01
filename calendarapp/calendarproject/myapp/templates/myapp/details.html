@@ -1,9 +1,0 @@
-{% extends 'myapp/base.html' %}
-{% block content %}
-<div class="details">
-		<button onclick="window.location='{% url 'index' %}'">BACK</button>
-    <h1>{{ entry.name }}</h1>
-    <p>{{ entry.date }}</p>
-    <p>{{ entry.description }}</p>
-</div>
-{% endblock %}
