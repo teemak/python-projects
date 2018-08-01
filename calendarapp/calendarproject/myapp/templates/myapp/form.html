@@ -1,0 +1,9 @@
+{% extends 'myapp/base.html' %}
+{% block content %}
+	<a href="{% url 'index' %}"><button>BACK</button></a>
+	<form method="POST">
+		{% csrf_token %}
+		{{ form }}
+		<button type="submit">SUBMIT</button>
+	</form>
+{% endblock %}
