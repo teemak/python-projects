@@ -1,0 +1,46 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset>
+                <legend>Join Today</legend>
+                <div>
+                    <label>Username</label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        {% for error in form.username.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+
+                </div>
+                <div>
+                    <label>Email</label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        {% for error in form.email.errors %}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div>
+                    <label>Password</label>
+                    {{ form.password }}
+                </div>
+                <div>
+                    <label>Confirm Password</label>
+                    {{ form.confirm_password }}
+                </div>
+            </fieldset>
+            {{ form.submit }}
+        </form>
+        
+        <div>
+            <small>Already Have An Account?
+                <a href="{{ url_for('login') }}">LOGIN</a>
+            </small>
+        </div>
+
+    </div>
+{% endblock content %}

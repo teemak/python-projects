@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+    {% if title %}
+        <title>Flask Blog - {{title}}</title>
+    {% else %}
+        <title>Flask Blog</title>
+    {% endif %}
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('home') }}">HOME</a> 
+        <a href="{{ url_for('about') }}">ABOUT</a> 
+        {% if current_user.is_authenticated %}
+            <a href="{{ url_for('account') }}">ACCOUNT</a>
+            <a href="{{ url_for('logout') }}">LOGOUT</a>
+        {% else %}
+            <a href="{{ url_for('login') }}">LOGIN</a> 
+            <a href="{{ url_for('register') }}">REGISTER</a> 
+        {% endif %}
+    </nav>
+    <div>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p>{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+    {% block content%}
+    {% endblock %}
+</body>
+
