@@ -8,3 +8,7 @@ body {
     background: gray;
     color: black;
 }
+
+.avatar-image {
+    width: 125px;
+}

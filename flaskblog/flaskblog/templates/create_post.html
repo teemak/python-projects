@@ -2,8 +2,9 @@
 {% block content %}
     
     <form method="POST">
+        {{ form.hidden_tag() }}
         <fieldset>
-            <legend>Create Post</legend>
+            {{ form.title.legend }}
             <div>
             {{ form.title.label }}
             {{ form.title }}
