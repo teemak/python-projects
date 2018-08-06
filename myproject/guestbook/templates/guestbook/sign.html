@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+		<link href="{% static 'guestbook/styles.css' %}" rel="stylesheet" >
+</head>
+
+<body>
+	<div class="sign-container">
+		<form method="POST" action="{% url 'sign' %}">
+			{% csrf_token %}
+			{{ form.name }}
+			{{ form.comment }}
+			<button type="submit">SUBMIT</button>
+		</form>
+	</div>
+</body>

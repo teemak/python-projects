@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE HTML>
+
+<head>
+		<link href="{% static 'guestbook/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+		<div class="guestbook-container">
+				<h1>This is the index.html</h1>
+				<a href="{% url 'sign' %}">
+					<button>Sign the guestbook</button>
+				</a>
+		</div>
+
+		<div>
+				{% for c in comments %}
+				<h1>{{ c.name }}</h1>
+				<p>{{ c.comment }}</p>
+				{% endfor %}
+		</div>
+</body>

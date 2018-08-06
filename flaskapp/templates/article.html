@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<h1>{{id}}</h1>
+
+{% for a in articles %}
+	{{a.body}}
+{% endfor %}
+
+{% endblock %}
