@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <h1>Posts by {{ user.username }} ({{ posts.total }})</h1>
+    <ul>
+    {% for post in posts.items %}
+        <li>
+            <a href="{{ url_for('post', post_id=post.id) }}">
+                <h3>{{ post.title }}</h3>
+                <span>{{ post.author.username }}</span>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+
+{% endblock %}
