@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from flask import Flask, render_template
 from data import Articles
 
@@ -23,3 +24,11 @@ def article(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
+=======
+from flask import Flask
+
+app = Flask(__name__)
+
+if __name__ == 'main':
+    app.run()
+>>>>>>> da60c89500e377c0de3c5e470251f2b063c4e062

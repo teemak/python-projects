@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{% static 'blog/styles.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="sign-container">
+        
+        <h1>THIS IS THE SIGN PAGE</h1>
+        <a href="{% url 'index' %}">BACK</a>
+        <form method="POST" action="{% url 'sign' %}">
+            
+            <!-- CSRF_TOKEN must be inside form tags -->
+            {% csrf_token %}
+
+            {{ comment_form.name }}
+            {{ comment_form.comment }}
+            <button type="submit">SUBMIT</button>
+        </form>
+
+    
+    </div>
+
+</body>
+
