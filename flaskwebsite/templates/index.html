@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>FLASK Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <a href="/">
+            <img src="{{ url_for('static', filename='favicon.ico') }}">
+        </a>
+        <button><img class="button--icon" src="{{ url_for('static', filename="images/group.png") }}"></img>Start learning</button>
+    </nav>
+
+    <h1>Hello Tee</h1>
+</body>
+</html>
