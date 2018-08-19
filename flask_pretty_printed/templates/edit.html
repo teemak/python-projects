@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
-	<form>
+	<form method="POST">
 		<label for="name">language</label>
-		<input type="text" name="name">
+        <input type="text" name="updated_language" value="{{language}}">
 		<button type="submit">EDIT</button>
+	</form>
+    <form action="{{ url_for('delete', name=language) }}" method="POST">
+        <button type="submit">DELETE {{ language.upper() }}</button>
 	</form>
 {% endblock %}
