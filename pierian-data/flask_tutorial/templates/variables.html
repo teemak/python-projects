@@ -3,6 +3,11 @@
     <h1>Variables will be passed to this template</h1>
     <p>This is the variable {{my_variable}} </p>
     <p>Names: {{letters}}</p>
+    <!--
+        .get()/if you know the key
+        .keys()/only the key
+        .items()/for key value pair
+    -->
     {% for key, value in pup_dict.items() %}
         <p>Pup Dictionary: {{ key }} is {{ value }}</p>
     {% endfor %}
