@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>Variables will be passed to this template</h1>
+    <p>This is the variable {{my_variable}} </p>
+    <p>Names: {{letters}}</p>
+    {% for key, value in pup_dict.items() %}
+        <p>Pup Dictionary: {{ key }} is {{ value }}</p>
+    {% endfor %}
+{% endblock %}
