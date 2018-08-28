@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <title>PUPPY ROCKS</title>
+</head>
+
+<body>
+    <nav>
+        <a href="{{ url_for('index') }}">HOME</a>
+        <a href="{{ url_for('signup') }}">FORM</a>
+    </nav>
+    {% block content %} {% endblock %}
+</body>

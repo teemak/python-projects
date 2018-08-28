@@ -1,0 +1,14 @@
+{% extends 'index.html' %}
+{% block content %}
+
+    {% if not lower_char %}
+        <p>Username must contain a lowercase character</p>
+    {% endif %}
+    {% if not upper_char %}
+        <p>Username must contain a uppercase character</p>
+    {% endif %}
+    {% if not digit_char %}
+        <p>Username must contain a digit</p>
+    {% endif %}
+
+{% endblock %}
