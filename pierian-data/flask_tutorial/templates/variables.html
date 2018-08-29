@@ -9,6 +9,6 @@
         .items()/for key value pair
     -->
     {% for key, value in pup_dict.items() %}
-        <p>Pup Dictionary: {{ key }} is {{ value }}</p>
+        <p>Pup Dictionary: {{ key|capitalize }} is {{ value }}</p>
     {% endfor %}
 {% endblock %}

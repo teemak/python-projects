@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h1>THANK YOU</h1>
+    <ul>
+        <li>Breed: {{session['breed']}}</li>
+        <li>Spayed: {{session['spayed']}}</li>
+        <li>Food: {{session['food']}}</li>
+        <li>Mood: {{session['mood']}}</li>
+        <li>Feedback: {{session['feedback']}}</li>
+    </ul>
+{% endblock %}

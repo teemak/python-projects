@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head>
+</head>
+<body>
+    {% block content %}
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            {{form.breed.label}}
+            {{form.breed}}
+            {{form.spayed.label}}
+            {{form.spayed}}
+            {{form.food.label}}
+            {{form.food}}
+            {{form.mood.label}}
+            {{form.mood}}
+            Any other feedback?
+            {{form.feedback.label}}
+            {{form.feedback}}
+            
+            {{ form.submit()}}
+        </form>
+    {% endblock %}
+</body>
