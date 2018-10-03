@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Signup</h1>
+    <form method="POST" action="">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+            
+        {{ form.hidden_tag() }} 
+        <div>
+            {{ form.username.label }}
+            {{ form.username }}
+            {% if form.username.errors  %}
+            <span>That's not a valid username</span>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.password.label }}
+            {{ form.password }}
+            {% if form.password.errors  %}
+            <span>That's not a valid password</span>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.verify_password.label }}
+            {{ form.verify_password }}
+            {% if form.verify_password.errors  %}
+            <span>Passwords don't match</span>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.email.label }}
+            {{ form.email }}
+            {% if form.email.errors  %}
+            <span>Email is invalid</span>
+            {% endif %}
+        </div>
+        <div>
+            {{ form.submit(class="button") }}
+        </div>
+    </form>
+    <ol>
+        <li>Require username, password, verify password - length must be 3 to 20 characters -
+            password and verify password must match - validate email only if it contains data
+        </li>
+        <li>Feedback message next to each input</li>
+        <li>Preserve only username and email fields</li>
+        <li>If all input is valid render welcome page with username</li>
+        <li>Use templates for index and welcome page</li>
+    </ol>
+{% endblock %}
