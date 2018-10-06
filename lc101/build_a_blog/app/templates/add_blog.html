@@ -1,4 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
     <h1>Add Blog</h1>
+    <form action="" method="POST">
+        <div>
+            <label for="title">Title for your new blog</label>
+            <input name="title" type="text"></input>
+        </div>
+        <div>
+            <label for="content">Your new blog:</label>
+            <textarea name="content"></textarea>
+        </div>
+        <button name="Post">Add Entry</button>
+    </form>
 {% endblock %}

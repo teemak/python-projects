@@ -9,4 +9,5 @@ class Blog(db.Model):
 
     def __repr__(self):
         #??? Data is being passed from ???
-        return f"Post('{self.title}', 'self.date_posted')"
+        #Just prints out this classe's attributes
+        return f"Post({self.title}, {self.content})"
