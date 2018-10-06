@@ -1,0 +1,32 @@
+body {
+    background: lightslategray;
+    font-size: 2em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__links--left a, .nav__links--right a {
+    margin: 10px;
+}
+
+.add_post__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.error {
+    color: red;
+}

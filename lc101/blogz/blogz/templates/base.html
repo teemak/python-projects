@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav__container">
+        <div class="nav__links--left">
+            <a href="{{ url_for('index') }}">Home</a>
+            <a href="{{ url_for('posts') }}">All Posts</a>
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('add_post') }}">New Post</a>
+            {% endif %}
+        </div>
+        <div class="nav__links--right">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('account') }}">Account</a>
+                <a href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a href="{{ url_for('login') }}">Login</a>
+                <a href="{{ url_for('register') }}">Register</a>
+            {% endif %}
+        </div>
+    </nav>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div>{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {% block content%}
+    {% endblock %}
+</body>
+
