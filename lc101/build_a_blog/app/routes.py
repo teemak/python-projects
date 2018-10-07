@@ -4,14 +4,17 @@ from app.models import Blog
 
 @app.route('/', methods=['GET'])
 def index():
+    db.create_all()
     #GETS all the posts from db
     posts = Blog.query.all()
     return render_template('index.html', posts=posts)
+    return render_template('index.html')
 
 @app.route('/add_blog', methods=["GET", "POST"])
 def add_blog():
     count = Blog.query.all()
     count = int(len(count))
+
     if request.method == "POST":
         title = request.form['title']
         content = request.form['content']

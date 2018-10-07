@@ -2,3 +2,7 @@ body {
     background: lightslategray;
     color: white;
 }
+
+ul {
+    list-style: none;
+}
