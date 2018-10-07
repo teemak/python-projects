@@ -2,9 +2,9 @@
 {% block content %}
     <h1>DISPLAY ALL USERS</h1>
     <ul>
-        {% for post in blogs %}
+        {% for user in users %}
         <li>
-            <h3>{{ post.author }}</h3>
+            <h3><a href="{{ url_for('user_posts', username=user.username ) }}">{{ user.username }}</a></h3>
         </li>
         {% endfor %}
     </ul>
